@@ -1,0 +1,7 @@
+group 'com.sabo'
+version '1.0-SNAPSHOT'
+
+dependencies {
+    api project(':commons')
+    implementation libraries.avro
+}
