@@ -1,0 +1,11 @@
+rootProject.name = 'multi-storage-kafka-avro-serdes'
+
+include 'avro-schemas-storage'
+include 'avro-serializers'
+include 'avro-local-serde'
+include 'commons'
+include 'avro-serde'
+include 'examples'
+include 'kafka-avro-tuples'
+include 'avro-data-tuples'
+

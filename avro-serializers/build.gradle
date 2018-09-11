@@ -1,0 +1,14 @@
+group 'com.sabo'
+version '1.0-SNAPSHOT'
+
+repositories {
+    maven {
+        url "https://packages.confluent.io/maven/"
+    }
+}
+
+dependencies {
+    api project(':avro-schemas-storage')
+    implementation project(':avro-data-tuples')
+    implementation libraries.kafka_serializer
+}
