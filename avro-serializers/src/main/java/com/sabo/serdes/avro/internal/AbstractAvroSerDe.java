@@ -17,13 +17,12 @@
 package com.sabo.serdes.avro.internal;
 
 import com.sabo.client.SchemaStorageClient;
-import com.sabo.schemas.primitives.PrimitivesSchemas;
+import com.sabo.schemas.PrimitivesSchemas;
 import org.apache.avro.Schema;
 import org.apache.avro.generic.GenericContainer;
 import org.apache.kafka.common.errors.SerializationException;
 
 import java.nio.ByteBuffer;
-
 
 public abstract class AbstractAvroSerDe extends PrimitivesSchemas {
 
