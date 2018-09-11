@@ -1,0 +1,8 @@
+group 'com.sabo'
+version '1.0-SNAPSHOT'
+
+dependencies {
+    api project(':avro-data-tuples')
+    api project(':avro-serde')
+    implementation libraries.avro
+}

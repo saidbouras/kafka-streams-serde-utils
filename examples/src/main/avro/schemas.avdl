@@ -1,0 +1,28 @@
+@namespace("com.sabo.schemas")
+protocol Examples {
+
+  record CustomerId {
+    string id;
+  }
+
+  record Adress {
+    union { null, string } line_one = null;
+    union { null, long } number = null;
+    union { null, long } postal_number = null;
+  }
+
+  record Orders {
+    union { null, long } order_id = null;
+    union { null, CustomerId } customer_id = null;
+    union { null, string } details = null;
+    union { null, Adress } Adress = null;
+  }
+
+  record Customer {
+    string name;
+    union { null, string } surname = null;
+    union { null, map<string> } phone_numbers = null;
+    long social_number;
+    Adress adress;
+  }
+}

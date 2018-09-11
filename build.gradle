@@ -1,0 +1,55 @@
+plugins {
+    id "com.github.hierynomus.license" version "0.14.0"
+}
+
+ext.version = '1.0-SNAPSHOT'
+ext.sourceCompatibility = 1.8
+
+group 'com.sabo'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    jcenter()
+    mavenCentral()
+    maven {
+        url "https://packages.confluent.io/maven/"
+    }
+}
+
+subprojects {
+    version = '1.0-SNAPSHOT'
+    sourceCompatibility = 1.8
+    apply plugin: 'java-library'
+    apply plugin: 'idea'
+    apply plugin: "com.github.hierynomus.license"
+
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+
+    license {
+        header rootProject.file('HEADER')
+        strictCheck true
+    }
+}
+
+ext.libraries = [:]
+
+ext.libraries += [
+        avro            : dependencies.create("org.apache.avro:avro:1.8.1") {
+            exclude module: "slf4j-api"
+            force true
+        },
+        kafka_client    : 'org.apache.kafka:kafka-clients:2.0.0',
+        kafka_streams   : 'org.apache.kafka:kafka-streams:2.0.0',
+        kafka_serializer: 'io.confluent:kafka-avro-serializer:5.0.0',
+        log4j           : [
+                'org.apache.logging.log4j:log4j-api:2.11.0',
+                'org.apache.logging.log4j:log4j-core:2.11.0',
+                'org.apache.logging.log4j:log4j-slf4j-impl:2.11.0'
+        ],
+        junit           : "junit:junit:4.12"
+]

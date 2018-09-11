@@ -1,0 +1,7 @@
+group 'com.sabo'
+version '1.0-SNAPSHOT'
+
+dependencies {
+    api libraries.log4j
+    implementation libraries.avro
+}

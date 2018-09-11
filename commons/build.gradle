@@ -1,0 +1,7 @@
+group 'com.sabo'
+version '1.0-SNAPSHOT'
+
+dependencies {
+    implementation libraries.avro
+    implementation libraries.kafka_streams
+}
